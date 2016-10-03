@@ -1,0 +1,107 @@
+<body class="gray-bg">
+	<link href="$!css/plugins/iCheck/custom.css?v=1.0" rel="stylesheet"/>
+	<link href="$!css/style.css?v=1.0" rel="stylesheet"/>
+    <div id="name" class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+            	## #######################################基本信息##########################################
+            	<div id="simple_information" class="row">
+            		<div class="col-sm-12">
+		                <div class="ibox float-e-margins">
+		                    <div class="ibox-title">
+		                        <h5>模块信息</h5>
+		                    </div>
+		                    <div class="ibox-content">
+		                        <div class="form-horizontal">
+		                            <div class="row">
+		                                <div class="col-sm-10">
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">模块
+		                                        	<span class="text-danger">*</span>：<br>
+		                                        	<span id="exist" class="label"></span>
+		                                        </label>
+		                                        <div class="col-sm-9">
+		                                            <input id="name" class="form-control" type="text" name="name">
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">父模块<span class="text-danger product-center">*</span>：</label>
+		                                        <div class="col-sm-9">
+		                                            <select class="form-control" name="super_id">
+		                                               	<option value="">请选择父模块</option>
+			                                            <option value="0">/</option>
+		                                            	#foreach ($ele in $modules)
+		                                                	<option value="$!ele.module_id">$!ele.name</option>
+		                                                #end
+		                                            </select>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">级别<span class="text-danger product-center">*</span>：</label>
+		                                        <div class="col-sm-9">
+		                                            <input id="module_level" class="form-control" name="module_level" type="number">
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">Url：</label>
+		                                        <div class="col-sm-9">
+		                                            <input class="form-control" name="action_url" type="text">
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">备注<span class="text-danger product-center">*</span>：</label>
+		                                        <div class="col-sm-9">
+		                                            <textarea class="form-control" name="remark"></textarea>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">扩展：</label>
+		                                        <div class="col-sm-9 i-checks">
+		                                            <label class="checkbox-inline">
+		                                                <input name="is_expand" value="true" type="checkbox"/>是
+		                                            </label>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">禁用：</label>
+		                                        <div class="col-sm-9 i-checks">
+		                                            <label class="checkbox-inline">
+		                                                <input name="is_forbidden" value="true" type="checkbox"/>是
+		                                            </label>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+                	</div>
+                </div>
+                <div class="row">
+            		<div class="col-sm-12">
+		                <div class="ibox float-e-margins">
+		                    <div class="ibox-content">
+		                        <div class="form-horizontal">
+		                            <div class="row">
+		                                <div class="col-sm-10">
+	                                        <div class="col-sm-3 col-sm-offset-3">
+	                                            <button id="module_add" class="btn btn-primary" type="Button">保存</button>
+	                                        </div>
+	                                        <div class="col-sm-3">
+	                                            <button id="module_cancel" class="btn btn-white" type="Button">取消</button>
+	                                        </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+                	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="$!js/content.min.js?v=1.0.0"></script>
+    <script src="$!js/plugins/iCheck/icheck.min.js"></script>
+    
+    <script src="$!vjs/module_addView.js?v=1.0"></script>
+</body>

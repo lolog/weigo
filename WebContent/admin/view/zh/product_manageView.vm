@@ -1,0 +1,49 @@
+<body class="gray-bg">
+	<link href="$!css/plugins/iCheck/custom.css" rel="stylesheet">
+	<link href="$!css/plugins/dataTables/dataTables.bootstrap.css?v=1.0" rel="stylesheet">
+	<link href="$!css/plugins/dataTables/select.dataTables.css?v=1.0" rel="stylesheet">
+	<link href="$!css/plugins/dataTables/buttons.dataTables.css?v=1.0" rel="stylesheet">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>商品管理</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="">
+                            <a onclick="Win.open('添加商品','addView.html')" class="btn btn-primary">添加</a>
+                            <a id="product_edit" class="btn btn-success">修改</a>
+                            <a id="product_scan" class="btn btn-success">查看</a>
+                            <a id="product_delete" class="btn btn-warning">删除</a>
+                            <a id="product_refresh" class="btn btn-primary fa fa-refresh"></a>
+                        </div>
+                        <table id="product_table" class="table table-striped table-bordered table-hover dataTables-example">
+                            <thead>
+                                <tr>
+                                	<th></th>
+                                	<th>ID</th>
+                                    <th>商品</th>
+                                    <th>分类</th>
+                                    <th>价格</th>
+                                    <th>库存</th>
+                                    <th>添加时间</th>
+                                    <th>推荐</th>
+                                    <th>禁用</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="$!js/plugins/dataTables/jquery.dataTables.js?v=1.0"></script>
+    <script src="$!js/plugins/dataTables/dataTables.bootstrap.js?v=1.0"></script>
+    <script src="$!js/plugins/dataTables/dataTables.select.js?v=1.0"></script>
+    <script src="$!js/plugins/dataTables/dataTables.buttons.js?v=1.0"></script>
+    <script src="$!js/plugins/jeditable/jquery.jeditable.js"></script>
+    <script src="$!js/plugins/iCheck/icheck.min.js"></script>
+    
+    <script src="$!vjs/product_manageView.js"></script>
+</body>

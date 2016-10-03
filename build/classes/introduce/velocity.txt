@@ -1,0 +1,6 @@
+一、模板路径
+	1.前端：
+	2.后台：/admin/view/xxx/xxx.vm
+二、布局路径
+	1.前端：
+	2.后台：/admin/view/layout/

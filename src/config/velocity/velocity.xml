@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/p
+	http://www.springframework.org/schema/tx/spring-p-4.0.xsd
+    http://www.springframework.org/schema/util 
+    http://www.springframework.org/schema/util/spring-util-4.0.xsd
+    http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<!-- 配置Velocity的引擎 -->
+	<bean class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+		<!-- 存放模板的路径 -->
+		<property name="resourceLoaderPath" value="/"/>
+		<property name="configLocation" value="classpath:config/velocity/velocity.properties"></property>
+	</bean>
+	
+	<!-- 配置Velocity视图的显示 -->
+	<bean id="velocityLayoutViewResolver" class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+		<!-- 视图的前缀,即存放的路径 -->
+		<property name="prefix" value="/"/>
+		<!-- 视图的后缀名 -->
+		<property name="suffix" value=".vm"></property>
+		<!-- 编码格式 -->
+		<property name="contentType" value="text/html;charset=UTF-8"/>
+		<!--日期函数名称-->  
+		<property name="dateToolAttribute" value="date" />
+		<!--数字函数名称-->
+        <property name="numberToolAttribute" value="number" />
+		<!-- Spring支持宏 -->
+		<property name="exposeSpringMacroHelpers" value="true"/>
+		<!-- 开发Session属性 -->
+		<property name="exposeSessionAttributes" value="true"/>
+		<!-- 开发Request属性 -->
+		<property name="exposeRequestAttributes" value="true"/>
+		<!-- Request属性引用名称 -->
+		<property name="requestContextAttribute" value="request"/>
+	</bean>
+</beans>

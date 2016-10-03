@@ -1,0 +1,111 @@
+<body class="gray-bg">
+	<link href="$!css/plugins/iCheck/custom.css?v=1.0" rel="stylesheet"/>
+	<link href="$!css/style.css?v=1.0" rel="stylesheet"/>
+    <div id="name" class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+            	## #######################################基本信息##########################################
+            	<div id="simple_information" class="row">
+            		<div class="col-sm-12">
+		                <div class="ibox float-e-margins">
+		                    <div class="ibox-title">
+		                        <h5>组信息</h5>
+		                    </div>
+		                    <div class="ibox-content">
+		                        <div class="form-horizontal">
+		                            <div class="row">
+		                                <div class="col-sm-10">
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">组名
+		                                        	<span class="text-danger">*</span>：<br>
+		                                        	<span id="exist" class="label"></span>
+		                                        </label>
+		                                        <div class="col-sm-9">
+		                                            <input id="name" class="form-control" type="text" name="name">
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">备注<span class="text-danger product-center">*</span>：</label>
+		                                        <div class="col-sm-9">
+		                                            <textarea id="remark" class="form-control" name="remark"></textarea>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+                	</div>
+                </div>
+                
+            	## #######################################模块##########################################
+            	<div class="row">
+            		<div class="col-sm-12">
+		                <div class="ibox float-e-margins">
+		                    <div class="ibox-title">
+		                        <h5>模块</h5>
+		                    </div>
+		                    <div class="ibox-content">
+		                        <div class="form-horizontal">
+		                            <div id="module_content" class="row">
+		                                <div class="col-sm-10">
+		                                	#foreach ($ele in $modules)
+			                                    <div class="form-group">
+			                                    	<input name="module_id" type="hidden" value="$!ele.module_id"/>
+			                                        <label class="col-sm-3 control-label">$!ele.name：</label>
+			                                        <div class="col-sm-9 i-checks">
+			                                            <label class="checkbox-inline">
+			                                                <input name="all" value="true" type="checkbox"/>所有
+			                                            </label>
+			                                            <label class="checkbox-inline">
+			                                                <input name="add" value="true" type="checkbox"/>增加
+			                                            </label>
+			                                            <label class="checkbox-inline">
+			                                                <input name="delete" value="true" type="checkbox"/>删除
+			                                            </label>
+			                                            <label class="checkbox-inline">
+			                                                <input name="update" value="true" type="checkbox"/>修改
+			                                            </label>
+			                                            <label class="checkbox-inline">
+			                                                <input name="query" value="true" type="checkbox"/>查询
+			                                            </label>
+			                                        </div>
+			                                    </div>
+		                                    #end
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+                	</div>
+                </div>
+                
+                <div class="row">
+            		<div class="col-sm-12">
+		                <div class="ibox float-e-margins">
+		                    <div class="ibox-content">
+		                        <div class="form-horizontal">
+		                            <div class="row">
+		                                <div class="col-sm-10">
+	                                        <div class="col-sm-3 col-sm-offset-3">
+	                                            <button id="module_add" class="btn btn-primary" type="Button">保存</button>
+	                                        </div>
+	                                        <div class="col-sm-3">
+	                                            <button id="module_cancel" class="btn btn-white" type="Button">取消</button>
+	                                        </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+                	</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="$!js/content.min.js?v=1.0.0"></script>
+    <script src="$!js/plugins/iCheck/icheck.min.js"></script>
+    
+    <script src="$!vjs/group_addView.js?v=1.0"></script>
+</body>

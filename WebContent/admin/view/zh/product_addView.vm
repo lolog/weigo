@@ -1,0 +1,393 @@
+<body class="gray-bg">
+	<link href="$!css/plugins/iCheck/custom.css?v=1.0" rel="stylesheet"/>
+	<link href="$!common/kindeditor/themes/default/default.css" rel="stylesheet"/>
+	<link href="$!css/style.css?v=1.0" rel="stylesheet"/>
+    <div id="name" class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-9">
+            	## #######################################基本信息##########################################
+            	<form id="simple_information" class="row">
+            		<div class="col-sm-12">
+		                <div class="ibox float-e-margins">
+		                    <div class="ibox-title">
+		                        <h5>商品信息</h5>
+		                    </div>
+		                    <div class="ibox-content">
+		                        <div class="form-horizontal">
+		                            <div class="row">
+		                                <div class="col-sm-10">
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">商品<span class="text-danger product-center">*</span>：</label>
+		                                        <div class="col-sm-9">
+		                                            <input class="form-control" type="text" name="name">
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">标题<span class="text-danger product-center">*</span>：</label>
+		                                        <div class="col-sm-9">
+		                                            <textarea class="form-control" name="title"></textarea>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">分类<span class="text-danger product-center">*</span>：</label>
+		                                        <div class="col-sm-9">
+		                                            <select class="form-control" name="classify_id">
+		                                               	<option value="">请选择分类</option>
+		                                            	#foreach ($ele in $productClassifies)
+		                                                	<option value="$!ele.classify_id">$!ele.name</option>
+		                                                #end
+		                                            </select>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">品牌<span class="text-danger product-center">*</span>：</label>
+		                                        <div class="col-sm-9">
+		                                            <select class="form-control" name="brand_id">
+		                                                <option value="">请选择品牌 </option>
+		                                                #foreach ($ele in $brands)
+		                                                	<option value="$!ele.brand_id">$!ele.name</option>
+		                                                #end
+		                                            </select>
+		                                        </div>
+		                                    </div>
+		                                    <div class="hr-line-dashed"></div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">币种<span class="text-danger product-center">*</span>：</label>
+		                                        <div class="col-sm-3">
+		                                            <select class="form-control" name="currency_id">
+		                                                <option value="">请选择币种</option>
+		                                                #foreach ($ele in $currencies)
+		                                                	<option value="$!ele.currency_id">$!ele.name</option>
+		                                                #end
+		                                            </select>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">商品原价<span class="text-danger product-center">*</span>：</label>
+		                                        <div class="col-sm-3">
+		                                            <input type="text" name="currency_price" class="form-control"> 
+		                                        </div>
+		                                        <label class="col-sm-3 control-label">币种汇率<span class="text-danger product-center">*</span>：</label>
+		                                        <div class="col-sm-3">
+		                                            <div class="input-group">
+		                                                <input type="text" name="currency_rate" class="form-control"> 
+		                                                <span class="input-group-addon">.00</span>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">商品折扣：</label>
+		                                        <div class="col-sm-3">
+		                                            <div class="input-group">
+		                                                <input type="text" name="discount" class="form-control"> 
+		                                                <span class="input-group-addon">.00</span>
+		                                            </div>
+		                                        </div>
+		                                        <label class="col-sm-3 control-label">商品库存<span class="text-danger product-center">*</span>：</label>
+		                                        <div class="col-sm-3">
+		                                            <div class="input-group">
+		                                                <input name="stock" type="number" class="form-control">
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                    <div class="hr-line-dashed"></div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">推荐商品：</label>
+		                                        <div class="col-sm-3 i-checks">
+		                                            <label class="checkbox-inline">
+		                                                <input name="is_recommand" value="true" type="checkbox"/>是
+		                                            </label>
+		                                        </div>
+		                                        <label class="col-sm-3 control-label">推荐级别：</label>
+		                                        <div class="col-sm-3">
+		                                            <div class="input-group">
+		                                                <input name="recommend_level" value="$!products.recommend_level" type="number" class="form-control"> 
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                    <div class="hr-line-dashed"></div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">禁用：</label>
+		                                        <div class="col-sm-9 i-checks">
+		                                            <label class="checkbox-inline">
+		                                                <input name="is_forbidden" value="true" type="checkbox"/>是
+		                                            </label>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+                	</div>
+                </form>
+                ## ############################           节假日                        ############################
+            	<div class="row">
+            		<div class="col-sm-12">
+		                <div class="ibox float-e-margins">
+		                    <div class="ibox-title">
+		                        <h5>节假日</h5>
+		                    </div>
+		                    <div class="ibox-content">
+		                        <form id="festival_content" class="form-horizontal">
+#****************************************************************************************** 		                        
+		                            <div class="row">
+		                                <div class="col-sm-10">
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">节假日：</label>
+		                                        <div class="col-sm-3">
+		                                            <div class="input-group">
+		                                                <select class="form-control" name="festival_id" title="festival_id">
+			                                                <option value="">请选择节假日</option>
+		                                                	#foreach ($ele in $festivals)
+			                                                	<option value="$!ele.festival_id">$!ele.name</option>
+			                                                #end
+			                                            </select>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">促销金额：</label>
+		                                        <div class="col-sm-3">
+		                                            <div class="input-group">
+		                                                <span class="input-group-addon">&yen;</span>
+		                                                <input type="text" name="discount_money" class="form-control"> 
+		                                            </div>
+		                                        </div>
+		                                        <label class="col-sm-3 control-label">促销折扣：</label>
+		                                        <div class="col-sm-3">
+		                                            <div class="input-group">
+		                                                <input name="discount" type="text" class="form-control"> 
+		                                                <span class="input-group-addon">.00</span>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">促销信息：</label>
+		                                        <div class="col-sm-9">
+		                                            <textarea name="information" type="text" class="form-control"></textarea>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+*******************************************************************************#
+		                        </form>
+	                            <div class="row" id="festival_add_btn">
+	                            	<div class="col-sm-10">
+	                                    <label class="col-sm-3 control-label">&nbsp;</label>
+	                                    <div class="col-sm-9">
+                                			<button type="button" class="btn btn-outline btn-success">新增+</button>
+                                		</div>
+                                	</div>
+                                </div>
+		                    </div>
+		                </div>
+                	</div>
+                </div>
+                ## ############################           商家                        ############################
+            	<div class="row">
+            		<div class="col-sm-12">
+		                <div class="ibox float-e-margins">
+		                    <div class="ibox-title">
+		                        <h5>相关商家</h5>
+		                    </div>
+		                    <div class="ibox-content">
+		                        <form id="shop_content" class="form-horizontal">
+#**********************************************************************************************************
+		                            <div class="row">
+		                                <div class="col-sm-10">
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">商家：</label>
+		                                        <div class="col-sm-3">
+		                                            <select class="form-control" name="shop_id">
+		                                                <option value="">请选择商家</option>
+	                                                	#foreach ($ele in $shops)
+		                                                	<option value="$!ele.shop_id">$!ele.name</option>
+		                                                #end
+		                                            </select>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">地址：</label>
+		                                        <div class="col-sm-9">
+		                                        	<input name="address" type="text" class="form-control"/>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">金额：</label>
+		                                        <div class="col-sm-3">
+		                                            <div class="input-group">
+		                                                <span class="input-group-addon">&yen;</span>
+		                                                <input name="money" type="text" class="form-control"> 
+		                                            </div>
+		                                        </div>
+		                                        <label class="col-sm-3 control-label">折扣：</label>
+		                                        <div class="col-sm-3">
+		                                            <div class="input-group">
+		                                                <span class="input-group-addon">￥</span>
+		                                                <input name="discount_money" type="text" class="form-control"> 
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-3 control-label">信息：</label>
+		                                        <div class="col-sm-9">
+		                                            <textarea name="information" class="form-control"></textarea>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+**********************************************************************************************#
+		                        </form>
+	                            <div class="row" id="shop_form_btn">
+	                            	<div class="col-sm-10">
+	                                    <label class="col-sm-3 control-label">&nbsp;</label>
+	                                    <div class="col-sm-9">
+                                			<button type="button" class="btn btn-outline btn-success">新增+</button>
+                                		</div>
+                                	</div>
+                                </div>
+		                    </div>
+		                </div>
+                	</div>
+                </div>
+                ## #############################           缩略图                          #############################
+            	<div class="row">
+            		<div class="col-sm-12">
+		                <div class="ibox float-e-margins">
+		                    <div class="ibox-title">
+		                        <h5>缩略图</h5>
+		                    </div>
+		                    <div class="ibox-content">
+		                        <div class="form-horizontal">
+		                        	<div class="row">
+		                            	<div class="col-sm-10">
+		                                    <label class="col-sm-2 control-label">&nbsp;</label>
+		                                    <div class="col-sm-2">
+	                                			<button id="image_add_btn" type="button" class="btn btn-outline btn-success">新增+</button>
+	                                		</div>
+		                                    <div class="col-sm-3">
+		                                    	<div class="input-group">
+		                                			<span id="image_delete_btn" class="input-group-addon btn-warning btn-outline">删除</span>
+			                                        <input type="text" id="index" class="form-control" style="width:60px">
+		                                        </div>
+	                                		</div>
+	                                	</div>
+	                                </div>
+		                            <div class="row">
+		                                <div class="col-sm-10">
+		                                    <form id="banner" class="form-group">
+		                                        <div class="col-sm-10 col-sm-offset-2 float-e-margins">
+		                                        	<a id="imgContent" class="fancybox"></a>
+							                        <a id="inputContent"></a>
+		                                        </div>
+		                                    </form>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+                	</div>
+                </div>
+                ## ############################           标签                        ############################
+            	<div class="row">
+            		<div class="col-sm-12">
+		                <div class="ibox float-e-margins">
+		                    <div class="ibox-title">
+		                        <h5>标签</h5>
+		                    </div>
+		                    <div class="ibox-content">
+		                        <div class="form-horizontal">
+		                            <div class="row">
+		                                <div class="col-sm-10  col-sm-offset-1">
+	                                        <form id="labels" class="col-sm-10 i-checks">
+	                                        	#foreach ($ele in $labels)
+		                                            <label class="checkbox-inline">
+		                                                <input name="labels" value="$!ele.name" type="checkbox"/>$!ele.name
+		                                            </label>
+		                                        #end
+	                                        </form>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+                	</div>
+                </div>
+                ## ############################           商品描述                        ############################
+            	<div class="row">
+            		<div class="col-sm-12">
+		                <div class="ibox float-e-margins">
+		                    <div class="ibox-title">
+		                        <h5>商品描述</h5>
+		                    </div>
+		                    <div class="ibox-content">
+		                        <div class="form-horizontal">
+		                            <div class="row">
+		                                <div class="col-sm-10 col-sm-offset-1">
+		                                	<textarea name="description" class="form-control"></textarea>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+                	</div>
+                </div>
+                ## #############################           操作                         #############################
+            	<div class="row">
+            		<div class="col-sm-12">
+		                <div class="ibox float-e-margins">
+		                    <div class="ibox-content">
+		                        <div class="form-horizontal">
+		                            <div class="row">
+		                                <div class="col-sm-10">
+	                                        <div class="col-sm-3 col-sm-offset-1">
+	                                            <button id="product_add" class="btn btn-primary" type="Button">保存</button>
+	                                        </div>
+	                                        <div class="col-sm-3">
+	                                            <button id="product_cancel" class="btn btn-white" type="Button">取消</button>
+	                                        </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+                	</div>
+                </div>
+            </div>
+            
+            <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>温馨提示</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="form-horizontal">
+                            <p>时间：2016-08-14 17:25:00</p>
+                            <div class="form-group">
+                                <label class="col-sm-6 control-label">港币汇率：</label>
+                                <div class="col-sm-6">
+                                    <span class="help-block m-b-none">0.857</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-6 control-label">港币汇率：</label>
+                                <div class="col-sm-6">
+                                    <span class="help-block m-b-none">0.857</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	    <div id="OBJ" style="display:none">$!OBJ</div>
+	    <div id="app" style="display:none">$!app/</div>
+    </div>
+    <script src="$!common/kindeditor/kindeditor.js"></script>
+	<script src="$!common/kindeditor/lang/zh_CN.js"></script>
+    <script src="$!js/content.min.js?v=1.0.0"></script>
+    <script src="$!js/plugins/iCheck/icheck.min.js"></script>
+    <script src="$!vjs/product_addView_dialog.js?v=1.0"></script>
+    <script src="$!vjs/product_addView.js?v=1.0"></script>
+</body>
