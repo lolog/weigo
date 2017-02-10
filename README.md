@@ -2,7 +2,7 @@
 Windows, Svn, MongoDB 3.2.x, Tomcat 7.x<br> 
 ###2. 开发工具<br> 
 Eclipse 4.5, Sublime 3.x, Vim<br> 
-###3. 部署环境<br> <br> 
+###3. 部署环境<br>
 Ubuntu, Jdk1.7, Tomcat7 <br> 
 ###4. 技术框架 <br> 
 Spring MVC 4.2, Velocity 1.7, JQuery, Bootstrap<br> 
